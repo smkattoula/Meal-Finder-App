@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.close {
+  margin-left: auto;
+  margin-top: 1rem;
+  width: 5rem;
+  height: 0.5rem;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.modal-img {
+  width: 8rem;
+  border-radius: 5rem;
+}
+
+.modal-times {
+  font-size: 2rem;
+}
+
+.modal-category {
+  border: 1px solid;
+  border-radius: 5rem;
+}
