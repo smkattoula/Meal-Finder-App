@@ -5,13 +5,17 @@ const MealModal = ({ meal }) => {
   const [details, setDetails] = useState([]);
 
   const getMealDetails = async (id) => {
-    const response = await axios.get(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-    );
+    try {
+      const response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+      );
 
-    const data = await response.data.meals;
-    setDetails(data);
-    console.log(data);
+      const data = await response.data.meals;
+      setDetails(data);
+      console.log(data);
+    } catch (error) {
+      console.error(error.message);
+    }
   };
 
   useEffect(() => {

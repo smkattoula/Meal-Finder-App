@@ -16,7 +16,7 @@ const GroceryModal = ({ grocery }) => {
 
       const response = await axios.put(`/api/v1/groceries/${id}`, item, config);
       const data = await response.data;
-      console.log(data);
+      window.location = "/grocerylist";
     } catch (error) {
       console.error(error.message);
     }
@@ -78,6 +78,7 @@ const GroceryModal = ({ grocery }) => {
               <button
                 type="button"
                 className="btn btn-primary"
+                data-dismiss="modal"
                 onClick={() => updateGroceryItem(grocery._id)}
               >
                 Save Grocery

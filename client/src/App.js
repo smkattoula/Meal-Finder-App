@@ -7,6 +7,13 @@ import GroceryHome from "./components/GroceryHome";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import "./App.css";
+import setAuthToken from "./utils/setAuthToken";
+
+const token = localStorage.getItem("token");
+
+if (token) {
+  setAuthToken(token);
+}
 
 const App = () => {
   return (

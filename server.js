@@ -12,6 +12,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/v1/groceries", require("./routes/groceries"));
+app.use("/api/v1/users", require("./routes/users"));
 
 const PORT = process.env.PORT || 5000;
 

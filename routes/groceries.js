@@ -1,10 +1,11 @@
 const express = require("express");
+const auth = require("../middleware/auth");
 const router = express.Router();
 
 const Grocery = require("../models/Grocery");
 
 // Get All Groceries Items
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const getGroceries = await Grocery.find({}).sort({
       date: -1,
@@ -30,11 +31,12 @@ router.get("/:id", async (req, res) => {
 });
 
 // Add a Grocery Item
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { groceryItem } = req.body;
 
     const newGrocery = new Grocery({
+      user: req.user.id,
       groceryItem,
     });
 
@@ -47,7 +49,7 @@ router.post("/", async (req, res) => {
 });
 
 // Update a Grocery Item
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   try {
     const grocery = await Grocery.findById(req.params.id);
 
@@ -64,7 +66,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a Grocery Item
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   try {
     let grocery = await Grocery.findById(req.params.id);
 
