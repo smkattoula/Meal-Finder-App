@@ -7,7 +7,7 @@ const Grocery = require("../models/Grocery");
 // Get All Groceries Items
 router.get("/", auth, async (req, res) => {
   try {
-    const getGroceries = await Grocery.find({}).sort({
+    const getGroceries = await Grocery.find({ user: req.user.id }).sort({
       date: -1,
     });
 

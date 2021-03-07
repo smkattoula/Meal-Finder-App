@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import axios from "axios";
 import { Table, Container } from "react-bootstrap";
 import GroceryModal from "./GroceryModal";
