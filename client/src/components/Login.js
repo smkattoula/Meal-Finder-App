@@ -34,8 +34,9 @@ const Login = () => {
 
       const data = await response.data;
       localStorage.setItem("token", data.token);
-      loadUser();
       history.push("/meals");
+      loadUser();
+      window.location = "/meals";
     } catch (error) {
       console.error(error.message);
     }

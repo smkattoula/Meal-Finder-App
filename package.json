@@ -11,6 +11,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.9.2",
+    "http-proxy-middleware": "^1.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
     "react-bootstrap": "^1.4.3"

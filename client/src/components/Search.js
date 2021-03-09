@@ -25,6 +25,7 @@ const Search = () => {
         setList(data);
 
         console.log(data);
+        console.log(list);
       }
     } catch (error) {
       console.error(error.message);
